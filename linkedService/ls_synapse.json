@@ -1,0 +1,13 @@
+{
+	"name": "ls_synapse",
+	"type": "Microsoft.DataFactory/factories/linkedservices",
+	"properties": {
+		"annotations": [],
+		"type": "AzureSynapseArtifacts",
+		"typeProperties": {
+			"endpoint": "https://sy-ott-workspace.dev.azuresynapse.net",
+			"authentication": "MSI",
+			"workspaceResourceId": "/subscriptions/47cda883-f790-4403-8438-1157acb23c5e/resourceGroups/rs_ott_asissindia/providers/Microsoft.Synapse/workspaces/sy-ott-workspace"
+		}
+	}
+}

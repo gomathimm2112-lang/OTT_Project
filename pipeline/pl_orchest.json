@@ -1,0 +1,72 @@
+{
+	"name": "pl_orchest",
+	"properties": {
+		"activities": [
+			{
+				"name": "Load new data",
+				"type": "ExecutePipeline",
+				"dependsOn": [],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_ott_onprem_adls_substr",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Transform Data",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Load new data",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_ott_transform",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			},
+			{
+				"name": "Load to SQL",
+				"type": "ExecutePipeline",
+				"dependsOn": [
+					{
+						"activity": "Transform Data",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"policy": {
+					"secureInput": false
+				},
+				"userProperties": [],
+				"typeProperties": {
+					"pipeline": {
+						"referenceName": "pl_ott_adls_sql",
+						"type": "PipelineReference"
+					},
+					"waitOnCompletion": true
+				}
+			}
+		],
+		"annotations": [],
+		"lastPublishTime": "2026-11-07T00:13:57Z"
+	},
+	"type": "Microsoft.DataFactory/factories/pipelines"
+}

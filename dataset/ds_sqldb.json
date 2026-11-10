@@ -1,0 +1,17 @@
+{
+	"name": "ds_sqldb",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_SqlServer",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "SqlServerTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "ott-adls-refined"
+		}
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

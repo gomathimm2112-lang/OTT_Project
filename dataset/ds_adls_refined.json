@@ -1,0 +1,62 @@
+{
+	"name": "ds_adls_refined",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "ls_adls",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"folderPath": "data",
+				"fileSystem": "refined"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": [
+			{
+				"name": "Title",
+				"type": "UTF8"
+			},
+			{
+				"name": "Genre",
+				"type": "UTF8"
+			},
+			{
+				"name": "Release_Date",
+				"type": "DATE"
+			},
+			{
+				"name": "IMDB_Score",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "Language",
+				"type": "UTF8"
+			},
+			{
+				"name": "Views",
+				"type": "INT32"
+			},
+			{
+				"name": "Added_Date",
+				"type": "DATE"
+			},
+			{
+				"name": "IMDB_Category",
+				"type": "UTF8"
+			},
+			{
+				"name": "Runtime_in_Hours",
+				"type": "DOUBLE"
+			},
+			{
+				"name": "Runtime_Category",
+				"type": "UTF8"
+			}
+		]
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}

@@ -1,0 +1,15 @@
+{
+	"name": "adf-ott-asiasindia",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true
+		}
+	},
+	"location": "indiasouthcentral",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "29e6beca-6712-4b06-aade-9378a0fd2b71",
+		"tenantId": "6b30ff12-12bd-46dc-8c7d-38726b330440"
+	}
+}
